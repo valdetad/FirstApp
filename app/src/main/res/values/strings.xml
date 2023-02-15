@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">FirstApp</string>
+    <string name="click_me">Click me</string>
+    <string name="happy_monday">HAPPY MONDAY!</string>
+    <string name="type_your_name">Type your name!</string>
+    <string name="todo">TODO</string>
+    <string name="username_mail_adress">Username or email adress</string>
+    <string name="password">Password</string>
+    <string name="button">Button</string>
 </resources>
