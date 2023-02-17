@@ -21,12 +21,13 @@
 
     <EditText
         android:id="@+id/EmailAddress"
-        android:layout_width="217dp"
-        android:layout_height="55dp"
+        android:layout_width="259dp"
+        android:layout_height="56dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="250dp"
         android:layout_marginEnd="50dp"
         android:autofillHints=""
+        android:drawableLeft="@drawable/baseline_person_24"
         android:ems="10"
         android:inputType="textEmailAddress"
         android:text="@string/username_mail_adress"
@@ -38,11 +39,13 @@
 
     <EditText
         android:id="@+id/Password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="253dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="350dp"
         android:layout_marginEnd="50dp"
+        android:autofillHints=""
+        android:drawableLeft="@drawable/baseline_password_24"
         android:ems="10"
         android:inputType="textPassword"
         android:minHeight="48dp"
@@ -50,7 +53,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints=""
         tools:ignore="LabelFor" />
 
     <Button
