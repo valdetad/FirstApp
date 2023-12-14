@@ -2,7 +2,6 @@ package com.example.firstapp;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,11 +13,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Put here you widgets: (Initialize Widgets)
-    // To import any package or any widget package, you click "Alt + Enter
     TextView textView;
     Button button;
-    EditText editText;
+    EditText emailEditText;
     ImageView imageView;
 
     @SuppressLint("SetTextI18n")
@@ -27,10 +24,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText EmailAddress = (EditText) findViewById(R.id.EmailAddress);
-        EditText Password = (EditText) findViewById(R.id.Password);
+        EditText EmailAddress = (EditText) findViewById(R.id.emailEditText);
+        EditText Password = (EditText) findViewById(R.id.passwordEditText);
 
-        Button button = (Button)findViewById(R.id.button) ;
+        Button button = (Button)findViewById(R.id.loginButton) ;
+        button.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_dark));
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
