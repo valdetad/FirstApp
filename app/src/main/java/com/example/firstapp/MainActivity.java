@@ -1,46 +1,48 @@
 package com.example.firstapp;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
+    private EditText editTextUsername;
+    private EditText editTextPassword;
 
-    TextView textView;
-    Button button;
-    EditText emailEditText;
-    ImageView imageView;
+    private static final String USERNAME = "User";
+    private static final String PASSWORD = "Password";
+    private static final String ERROR_MSG = "Sorry, your email or password was incorrect. Try Again!";
 
-    @SuppressLint("SetTextI18n")
+    private static final String SUCCESS_MSG = "Login successful!";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText EmailAddress = (EditText) findViewById(R.id.emailEditText);
-        EditText Password = (EditText) findViewById(R.id.passwordEditText);
+        View loginBtn = findViewById(R.id.loginBtn);
+        editTextUsername = findViewById(R.id.editTextUsername);
+        editTextPassword = findViewById(R.id.editTextPassword);
 
-        Button button = (Button)findViewById(R.id.loginButton) ;
-        button.setBackgroundColor(getResources().getColor(android.R.color.holo_blue_dark));
+        loginBtn.setOnClickListener(v -> {
+            String enteredUsername = editTextUsername.getText().toString();
+            String enteredPassword = editTextPassword.getText().toString();
 
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(EmailAddress.getText().toString().equals("valdeta")&& Password.getText().toString().equals("valdeta")) {
-                  Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-
-                }
-                else
-                    Toast.makeText(MainActivity.this, "Sorry, your email or password was incorrect. Try Again!", Toast.LENGTH_SHORT).show();
-                }
-
+            handleLogin(enteredUsername, enteredPassword);
         });
-    }}
+    }
+
+    private void handleLogin(String enteredUsername, String enteredPassword) {
+        if (enteredUsername.equals(USERNAME) && enteredPassword.equals(PASSWORD))  {
+            showToast(SUCCESS_MSG);
+        } else {
+            showToast(ERROR_MSG);
+        }
+    }
+
+    private void showToast(String message) {
+        Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+    }
+}
